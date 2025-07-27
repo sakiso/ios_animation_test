@@ -8,34 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <!-- <div class="test-section">
-            <h1>MP4 Video Test</h2>
-            <div class="media-container">
-                <video id="mp4-video" playsinline muted autoplay loop preload="auto">
-                    <source src="assets/mp4.mp4" type="video/mp4">
-                    お使いのブラウザはMP4動画をサポートしていません。
-                </video>
-                <p>確認観点: ページ読み込み時、自動再生されるか</p>
-            </div>
+        <div class="test-section">
+        <div class="test-section">
+            <h1>Animated WebP w/o dispose method Test</h2>
         </div>
-
-        <div class="test-section">
-            <h1>Animated WebP Test</h2>
-            <div class="media-container">
-                <img id="webp-image" src="assets/webp.webp" alt="Animated WebP" loading="lazy">
-                <p>確認観点: 表示されているか & カクカクしていないか</p>
-            </div>
-        </div> -->
-
-        <div class="test-section">
-            <h1>Animated AVIF Test</h2>
-            <div class="media-container">
-                <img id="avif-image" src="assets/avif.avif" alt="AVIF" loading="lazy">
-                <p>確認観点: 表示されているか & カクカクしていないか</p>
-            </div>
+        <div class="button-container">
+            <button id="prev-button">前の画像</button>
+            <button id="next-button">次の画像</button>
         </div>
     </div>
-
     <div class="device-info">
         <h2>デバイス情報</h2>
         <div id="device-info-content">
@@ -44,7 +25,6 @@
             <p><strong>デバイスピクセル比:</strong> <span id="device-pixel-ratio"></span></p>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -159,3 +159,32 @@ window.addEventListener('error', function(e) {
 // デバッグ情報の出力
 console.log('iOS Animation Performance Test loaded');
 console.log('User Agent:', navigator.userAgent);
+
+const images = ['assets/1.webp', 'assets/2.webp', 'assets/3.webp'];
+let currentImageIndex = 0;
+const mediaContainer = document.createElement('div');
+mediaContainer.classList.add('media-container');
+const img = document.createElement('img');
+img.id = 'webp-image';
+img.src = images[currentImageIndex];
+img.alt = 'Animated WebP';
+img.loading = 'lazy';
+const p = document.createElement('p');
+p.textContent = '確認観点: 表示されているか & カクカクしていないか';
+mediaContainer.appendChild(img);
+mediaContainer.appendChild(p);
+document.querySelector('.test-section').appendChild(mediaContainer);
+
+function updateImage() {
+    img.src = images[currentImageIndex];
+}
+
+document.getElementById('next-button').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateImage();
+});
+
+document.getElementById('prev-button').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateImage();
+});
